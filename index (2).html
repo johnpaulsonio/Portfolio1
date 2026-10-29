@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>John Paul Sonio – IT Student Portfolio</title>
+<meta name="description" content="Portfolio of John Paul Sonio, a BS Information Technology student and aspiring web developer from Las Piñas City, Philippines.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f0e6;--card:#fbf8f1;--ink:#1a1f2e;--mute:#6b665a;--line:#d9d1bf;--accent:#8a6420;--ai:#fff;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Source Sans 3',system-ui,sans-serif;--mono:'IBM Plex Mono',ui-monospace,monospace;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1319;--card:#171c24;--ink:#efe8d8;--mute:#a39d8e;--line:#2a303b;--accent:#d4a95a;--ai:#0f1319}}
+:root[data-theme="dark"]{--bg:#0f1319;--card:#171c24;--ink:#efe8d8;--mute:#a39d8e;--line:#2a303b;--accent:#d4a95a;--ai:#0f1319}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px;color-scheme:light dark}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.7 var(--sans)}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.1;margin:0}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:10}
+.bar{display:flex;align-items:center;gap:6px;height:64px}
+.logo{font:600 22px var(--serif);color:var(--ink);text-decoration:none;margin-right:auto}
+nav{display:flex;gap:2px;flex-wrap:wrap}
+nav a{color:var(--mute);text-decoration:none;font:500 12px var(--sans);letter-spacing:.12em;text-transform:uppercase;padding:8px 10px}
+nav a:hover{color:var(--ink)}
+.icon-btn{width:38px;height:38px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;border-radius:2px}
+.btn{display:inline-block;padding:12px 22px;border:1px solid var(--ink);color:var(--ink);font:600 12px var(--sans);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;background:transparent;cursor:pointer;border-radius:2px}
+.btn.main{background:var(--ink);color:var(--bg)}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn.main:hover{background:var(--accent);color:var(--ai)}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:center;padding:80px 24px}
+.badge{color:var(--mute);font:500 12px var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.hero h1{font-size:clamp(40px,6vw,76px);margin:20px 0 0;letter-spacing:-.02em}
+#role{font-style:italic;color:var(--accent)}
+.hero p{max-width:30em;color:var(--mute);font-size:19px;margin:24px 0 32px}
+.card-col{width:min(320px,86%);justify-self:center}
+.card3d-wrap{perspective:900px}
+.card3d{position:relative;aspect-ratio:1;transform-style:preserve-3d;transform:rotateX(var(--rx,0deg)) rotateY(calc(var(--ry,0deg) + var(--flip,0deg)));transition:transform .5s;cursor:pointer}
+.face{position:absolute;inset:0;border-radius:4px;overflow:hidden;border:1px solid var(--line);background:var(--card);backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.front{display:grid;place-items:center}
+.ini{font:500 72px var(--serif);color:var(--mute)}
+.front img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 15%}
+.back{transform:rotateY(180deg);display:grid;align-content:center;justify-items:center;gap:6px;padding:24px;text-align:center;background:var(--ink);color:var(--bg)}
+.back b{font:500 30px/1.1 var(--serif)}
+.hint{display:block;text-align:center;margin-top:26px;font:400 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+section{padding:80px 0;border-top:1px solid var(--line)}
+.eyebrow{font:500 12px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 12px}
+h2{font-size:clamp(34px,4.6vw,52px);margin-bottom:10px}
+.sub{color:var(--mute);margin:0 0 40px}
+.about{display:grid;grid-template-columns:1.5fr 1fr;gap:48px}
+.facts,.form,.ph{background:var(--card);border:1px solid var(--line);border-radius:2px}
+.facts{padding:24px 28px;margin:0}
+.facts dt{font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.facts dd{margin:2px 0 16px}
+.facts dd:last-child{margin:0}
+.levels{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px 56px;margin-bottom:44px}
+.lv{display:flex;justify-content:space-between;font:500 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+.lv span{color:var(--accent)}
+.track{height:2px;background:var(--line)}
+.fill{height:100%;width:0;background:var(--accent);transition:width 1.2s}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:32px 40px}
+.skills>div{border-top:1px solid var(--ink);padding-top:16px}
+.skills h3{font-size:26px;margin-bottom:12px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.tags li{border:1px solid var(--line);padding:2px 10px;font:400 12.5px var(--mono);color:var(--mute)}
+.ph{padding:28px;color:var(--mute)}
+.ph h3{font-size:26px;color:var(--ink);margin-bottom:8px}
+.timeline{border-left:1px solid var(--line);padding-left:28px;margin:0}
+.timeline h3{font-size:26px}
+.timeline p{margin:4px 0 28px;color:var(--mute)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:44px;align-items:start}
+.form{padding:26px;display:grid;gap:16px}
+.form label{display:grid;gap:6px;font:500 11.5px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.form input,.form textarea{font:400 16px var(--sans);text-transform:none;letter-spacing:0;padding:11px 13px;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:2px}
+.err{color:#c0392b;font:400 12.5px var(--sans);text-transform:none;letter-spacing:0;min-height:1em}
+.status{margin:0;font-size:14px;color:var(--mute)}
+footer{padding:36px 0;border-top:1px solid var(--line);color:var(--mute);font:400 11.5px var(--mono);letter-spacing:.12em;text-transform:uppercase;text-align:center}
+@media (max-width:760px){.hero,.about,.contact-grid{grid-template-columns:1fr}.hero{padding-top:40px;gap:32px}.card-col{order:-1;width:220px}.ini{font-size:52px}section{padding:56px 0}.bar{height:auto;padding:8px 0;flex-wrap:wrap}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.ph small{display:block;font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.ph ul{margin:8px 0 0;padding-left:18px}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{font:500 11px var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--mute)}
+h3.sh{font-size:30px;margin:44px 0 16px}
+.btn[aria-disabled=true]{opacity:.55;pointer-events:none}
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.cert-grid a{display:block;border:1px solid var(--line);border-radius:2px;overflow:hidden;background:var(--card);transition:border-color .2s}
+.cert-grid a:hover{border-color:var(--accent)}
+.cert-grid img{width:100%;height:auto;display:block;aspect-ratio:4/3;object-fit:cover}
+.cert-grid .ph{margin:0}
+video{width:100%;max-width:720px;border:1px solid var(--line);border-radius:2px;background:#000;display:block}
+@media print{body.pr header,body.pr footer,body.pr .hero,body.pr #pr,body.pr main>section:not(#skills):not(#education):not(#resume):not(#certificates){display:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap bar">
+<a class="logo" href="#top">John Paul Sonio</a>
+<nav aria-label="Main">
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#problem-solving">Problem-solving</a>
+<a href="#education">Education</a>
+<a href="#employability">Employability</a>
+<a href="#resume">Resume</a>
+<a href="#certificates">Certificates</a>
+<a href="#github">GitHub</a>
+<a href="#contact">Contact</a>
+<a href="#reflection">Reflection</a>
+</nav>
+<button class="icon-btn" id="theme" aria-label="Switch light or dark theme">◐</button>
+</div></header>
+
+<main id="top">
+<div class="wrap hero">
+<div>
+<span class="badge">Open to junior roles and internships</span>
+<h1>Hi, I’m John Paul Sonio. I build <span id="role">web apps</span> and solve problems with code.</h1>
+<p>I’m a 4th-year BS Information Technology student who enjoys building software and exploring code to challenge myself to create complete systems.</p>
+<div class="btns">
+<a class="btn main" href="#projects">View my projects</a>
+<a class="btn" href="#contact">Get in touch</a>
+</div>
+</div>
+<div class="card-col">
+<div class="card3d-wrap">
+<div class="card3d" id="card" role="button" tabindex="0" aria-pressed="false" aria-label="Profile card of John Paul Sonio. Press to flip it.">
+<div class="face front">
+<span class="ini">JP</span>
+<img src="prof.jpg" alt="John Paul Sonio">
+</div>
+<div class="face back">
+<b>John Paul Sonio</b>
+<span>BS Information Technology</span>
+<span>Las Piñas City, PH</span>
+<span style="margin-top:12px;font-size:13px;opacity:.8">Open to junior roles</span>
+</div>
+</div>
+</div>
+<span class="hint">Click card to flip</span>
+</div>
+</div>
+
+<section id="about"><div class="wrap">
+<p class="eyebrow">01 · About</p>
+<h2>About me</h2>
+<p class="sub">A quick snapshot of who I am and what I’m working toward.</p>
+<div class="about">
+<div>
+<p>I’m a 4th-year BS Information Technology student at Datamex College of Saint Adeline. I enjoy turning ideas into working software—especially web applications, databases, and simple data analysis tools. I learn best by building complete systems and fixing the problems that appear along the way.</p>
+<p>Outside class I explore HTML, CSS, JavaScript, Python, SQL and PHP, and I’m steadily moving toward full-stack web development. I’m looking for junior developer roles or internships where I can contribute, learn from experienced teammates, and keep growing.</p>
+</div>
+<dl class="facts">
+<dt>Location</dt><dd>Las Piñas City, Philippines</dd>
+<dt>Education</dt><dd>BS Information Technology · 2023–2027</dd>
+<dt>Focus</dt><dd>Web development &amp; data analysis</dd>
+<dt>Email</dt><dd><a href="mailto:johnpaulsonio48@gmail.com">johnpaulsonio48@gmail.com</a></dd>
+<dt>Status</dt><dd>Open to junior roles &amp; internships</dd>
+</dl>
+</div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+<p class="eyebrow">02 · Skills</p>
+<h2>Skills</h2>
+<p class="sub">Technical skills I’m building and soft skills I practice every day.</p>
+<div class="levels">
+<div>
+<div class="lv">HTML / CSS <span>85%</span></div>
+<div class="track"><div class="fill" data-level="85"></div></div>
+</div>
+<div>
+<div class="lv">JavaScript <span>70%</span></div>
+<div class="track"><div class="fill" data-level="70"></div></div>
+</div>
+<div>
+<div class="lv">Python <span>75%</span></div>
+<div class="track"><div class="fill" data-level="75"></div></div>
+</div>
+<div>
+<div class="lv">SQL / MySQL <span>70%</span></div>
+<div class="track"><div class="fill" data-level="70"></div></div>
+</div>
+<div>
+<div class="lv">PHP <span>60%</span></div>
+<div class="track"><div class="fill" data-level="60"></div></div>
+</div>
+<div>
+<div class="lv">Git &amp; GitHub <span>65%</span></div>
+<div class="track"><div class="fill" data-level="65"></div></div>
+</div>
+</div>
+<div class="skills">
+<div>
+<h3>Frontend</h3>
+<ul class="tags"><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Responsive design</li></ul>
+</div>
+<div>
+<h3>Backend &amp; Data</h3>
+<ul class="tags"><li>Python</li><li>PHP</li><li>SQL</li><li>MySQL</li><li>Excel analysis</li></ul>
+</div>
+<div>
+<h3>Tools</h3>
+<ul class="tags"><li>Git</li><li>GitHub</li><li>VS Code</li><li>Chrome DevTools</li></ul>
+</div>
+<div>
+<h3>Personal</h3>
+<ul class="tags"><li>Quick learner</li><li>Communication</li><li>Responsible</li><li>Team player</li><li>Multitasking</li></ul>
+</div>
+</div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+<p class="eyebrow">03 · Projects</p>
+<h2>Projects</h2>
+<p class="sub">Selected work that shows how I approach problems and ship solutions.</p>
+<div class="g">
+<div class="ph">
+<small>Web · E-commerce · Firebase</small>
+<h3>Jewels.shop</h3>
+<p>A fine-jewelry online store with a product catalog, shopping cart, wishlist, promo codes and checkout, plus an admin panel for managing products.</p>
+<ul>
+<li>Browse by category: rings, necklaces, earrings, bracelets and watches</li>
+<li>Cart, wishlist, sorting and price filters</li>
+<li>Promo code support and order confirmation flow</li>
+<li>Product admin and manager tools backed by Firebase</li>
+</ul>
+<p style="margin-top:14px"><a class="btn" href="https://johnpaulsonio.github.io/jewel.shop/" target="_blank" rel="noopener">View live demo</a></p>
+</div>
+<div class="ph">
+<small>Data analysis · Excel</small>
+<h3>Food Delivery Analysis</h3>
+<p>Analyzed 50 food-delivery orders to uncover patterns in order value, delivery time, ratings and promo usage. Built cleaned data, descriptive statistics, pivot-style summaries and evidence-based recommendations.</p>
+<ul>
+<li>Correlation of −0.70 between delivery time and rating</li>
+<li>North area slowest and lowest-rated</li>
+<li>Returning customers spend ~72% more per order</li>
+<li>Actionable recommendations for logistics and promos</li>
+</ul>
+<p style="margin-top:14px"><a class="btn" href="Project2_Food_Delivery_Analysis.xlsx" download>Download Excel workbook</a></p>
+</div>
+<div class="ph">
+<small>Web · Point of sale</small>
+<h3>POS System</h3>
+<p>A web-based point-of-sale system for running sales and managing store transactions.</p>
+<p style="margin-top:14px"><a class="btn" href="https://edselvillanueva980.github.io/Project-pos-web/" target="_blank" rel="noopener">View live demo</a></p>
+</div>
+</div></section>
+
+<section id="problem-solving"><div class="wrap">
+<p class="eyebrow">04 · Problem-solving</p>
+<h2>Problem-solving</h2>
+<p class="sub">Five troubleshooting cases, one security case and my responsible use of AI.</p>
+<div class="g">
+<div class="ph">
+<small>Case 1 · Web</small>
+<h3>Images not loading on mobile</h3>
+<p><strong>Problem:</strong> Portfolio images appeared broken only on mobile browsers.</p>
+<p><strong>Causes considered:</strong> wrong relative paths, case-sensitive filenames, missing assets folder on host.</p>
+<p><strong>Diagnostic:</strong> Checked network tab, confirmed 404s, compared local vs deployed file structure.</p>
+<p><strong>Solution:</strong> Normalized all asset paths and uploaded the missing images folder.</p>
+<p><strong>Lesson:</strong> Always verify case sensitivity and relative paths after deploy.</p>
+</div>
+<div class="ph">
+<small>Case 2 · Data</small>
+<h3>Excel formulas returning #DIV/0!</h3>
+<p><strong>Problem:</strong> Average order-value formulas failed on empty promo groups.</p>
+<p><strong>Causes:</strong> Division by zero when a category had zero rows.</p>
+<p><strong>Diagnostic:</strong> Used COUNTIF to confirm empty groups.</p>
+<p><strong>Solution:</strong> Wrapped averages with IF(COUNTIF(...)=0,"—",AVERAGEIFS(...)).</p>
+<p><strong>Lesson:</strong> Guard every division and average against empty sets.</p>
+</div>
+<div class="ph">
+<small>Case 3 · JS</small>
+<h3>Theme toggle not persisting</h3>
+<p><strong>Problem:</strong> Dark mode reset on page reload.</p>
+<p><strong>Causes:</strong> localStorage write failing in private mode or missing read on load.</p>
+<p><strong>Diagnostic:</strong> Console checked for quota/security errors.</p>
+<p><strong>Solution:</strong> Wrapped storage in try/catch and applied stored theme immediately on DOM load.</p>
+<p><strong>Lesson:</strong> Treat browser storage as optional and fail gracefully.</p>
+</div>
+<div class="ph">
+<small>Case 4 · SQL</small>
+<h3>Slow query on student records</h3>
+<p><strong>Problem:</strong> SELECT with multiple JOINs timed out on a class project database.</p>
+<p><strong>Causes:</strong> Missing indexes on foreign keys and SELECT * pulling unused columns.</p>
+<p><strong>Diagnostic:</strong> EXPLAIN showed full table scans.</p>
+<p><strong>Solution:</strong> Added indexes on join columns and selected only needed fields.</p>
+<p><strong>Lesson:</strong> Index early and avoid SELECT * in production queries.</p>
+</div>
+<div class="ph">
+<small>Case 5 · Deployment</small>
+<h3>Contact form opened blank email</h3>
+<p><strong>Problem:</strong> mailto: link produced empty subject/body on some phones.</p>
+<p><strong>Causes:</strong> Unencoded special characters and missing encodeURIComponent.</p>
+<p><strong>Diagnostic:</strong> Tested on Android and iOS mail clients.</p>
+<p><strong>Solution:</strong> Properly encoded subject and body with encodeURIComponent.</p>
+<p><strong>Lesson:</strong> Always encode dynamic parts of mailto URLs.</p>
+</div>
+</div>
+
+<h3 class="sh">Cybersecurity case study</h3>
+<div class="ph">
+<small>Security · SQL Injection</small>
+<h3>Preventing SQL injection in a login form</h3>
+<p><strong>What it is:</strong> Attackers inject malicious SQL through form inputs to bypass authentication or read data.</p>
+<p><strong>How it happens:</strong> User input is concatenated directly into a query string, e.g. <code>"SELECT * FROM users WHERE name='" + input + "'"</code>.</p>
+<p><strong>Risks:</strong> Unauthorized access, data theft, data destruction, privilege escalation.</p>
+<p><strong>Prevention:</strong> Use parameterized queries / prepared statements, validate and sanitize input, apply least-privilege database accounts, and never trust client-side checks alone.</p>
+<p><strong>Practices I apply:</strong> Prefer ORMs or prepared statements, keep credentials out of source control, and review any raw SQL carefully.</p>
+</div>
+
+<h3 class="sh">AI usage log</h3>
+<div class="tw">
+<table>
+<thead><tr><th>Date</th><th>Task</th><th>AI assistance</th><th>My verification / result</th></tr></thead>
+<tbody>
+<tr>
+<td>Oct 29, 2026</td>
+<td>Portfolio website layout and fixes</td>
+<td>Helped structure sections, fix responsive bugs and draft clear wording</td>
+<td>Reviewed every suggestion, rewrote copy in my own voice, tested layout on mobile and desktop, and kept only changes I understood and approved</td>
+</tr>
+<tr>
+<td>Oct 2026</td>
+<td>Food Delivery Analysis formulas</td>
+<td>Suggested AVERAGEIFS / COUNTIFS patterns and correlation interpretation</td>
+<td>Rebuilt all formulas myself, cross-checked totals against manual counts, and wrote the final recommendations based on the numbers</td>
+</tr>
+<tr>
+<td>Aug 2026</td>
+<td>Webinar notes – Code, Create, Deploy</td>
+<td>Summarized key steps for publishing a static site</td>
+<td>Compared summary with my own notes from the session and practiced the steps on a sample page</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></section>
+
+<section id="education"><div class="wrap">
+<p class="eyebrow">05 · Education &amp; experience</p>
+<h2>Education</h2>
+<p class="sub">Where I’ve studied and worked.</p>
+<div class="timeline">
+<h3>BS Information Technology</h3>
+<p>Datamex College of Saint Adeline, Parañaque City · 2023–2027</p>
+<h3>Senior High School</h3>
+<p>Las Piñas National SHS, Manuyo Uno Campus · 2020–2022</p>
+<h3>High School</h3>
+<p>Las Piñas National High School, Main · 2016–2020</p>
+</div>
+<h3 class="sh">Work experience</h3>
+<div class="timeline">
+<h3>Bagger</h3>
+<p>SM Hypermarket Sucat · March–July 2026</p>
+<h3>Branch attendant</h3>
+<p>New Zion Company · January–April 2022</p>
+</div>
+</div></section>
+
+<section id="employability"><div class="wrap">
+<p class="eyebrow">06 · Employability</p>
+<h2>Employability</h2>
+<p class="sub">Interview readiness and where I’m headed.</p>
+<div class="g">
+<div class="ph">
+<small>Employability</small>
+<h3>Mock job interview</h3>
+<p>Completed. Recording below. Covered self-introduction, why BSIT, and career goals (full-stack web development).</p>
+</div>
+<div class="ph">
+<small>Employability</small>
+<h3>Technical interview</h3>
+<p>In progress. Practicing HTML/CSS/JS fundamentals, basic SQL, and explaining the Food Delivery Analysis project.</p>
+</div>
+<div class="ph">
+<small>Employability</small>
+<h3>Project defense</h3>
+<p>Preparing to present the Food Delivery Analysis workbook and this portfolio site as demonstration of applied skills.</p>
+</div>
+</div>
+
+<h3 class="sh">Mock job interview recording</h3>
+<video controls preload="metadata" playsinline src="mock-interview.mp4"></video>
+
+<h3 class="sh">Career development plan</h3>
+<div class="tw">
+<table>
+<tbody>
+<tr><th>Target position</th><td>Junior Web Developer</td></tr>
+<tr><th>Target IT field</th><td>Web Development</td></tr>
+<tr><th>Current skills</th><td>Python, HTML, CSS, JavaScript, SQL, basic PHP, Excel analysis</td></tr>
+<tr><th>Skills to improve</th><td>Modern JavaScript (ES6+), responsive layouts, REST APIs, debugging</td></tr>
+<tr><th>Technologies to learn</th><td>React or Vue basics, Node.js, Git workflows, simple cloud deployment</td></tr>
+<tr><th>Certifications to pursue</th><td>FreeCodeCamp Responsive Web Design, Google IT Support or similar entry-level cert</td></tr>
+<tr><th>6-month / 1-year / 3-year goals</th>
+<td>
+<strong>6 months:</strong> Finish 2–3 polished web projects, contribute to open-source or school repos, land an internship or junior role.<br>
+<strong>1 year:</strong> Comfortable building and deploying full-stack features; mentor juniors in class projects.<br>
+<strong>3 years:</strong> Proficient full-stack developer contributing to production systems and taking on technical leadership on small teams.
+</td></tr>
+</tbody>
+</table>
+</div>
+</div></section>
+
+<section id="resume"><div class="wrap">
+<p class="eyebrow">07 · Resume</p>
+<h2>Resume</h2>
+<p class="sub">A one-page IT resume you can print or save as PDF.</p>
+<div class="g">
+<div class="ph">
+<small>Profile</small>
+<p>4th-year BS Information Technology student with hands-on practice in software development, web technologies and data analysis. I improve by exploring, building and refining complete systems.</p>
+</div>
+<div class="ph">
+<small>Contact</small>
+<p>Las Piñas City, Philippines<br>
+<a href="mailto:johnpaulsonio48@gmail.com">johnpaulsonio48@gmail.com</a></p>
+</div>
+<div class="ph">
+<small>References</small>
+<p>Available upon request.</p>
+</div>
+</div>
+<p style="margin-top:24px"><button class="btn main" id="pr" type="button">Save resume as PDF</button></p>
+</div></section>
+
+<section id="certificates"><div class="wrap">
+<p class="eyebrow">08 · Certificates</p>
+<h2>Certificates and achievements</h2>
+<p class="sub">Proof of what I’ve learned.</p>
+<div class="cert-grid">
+<a href="cert6.jpg" target="_blank" rel="noopener">
+<img src="cert6.jpg" alt="Certificate of Attendance: Zero Trust Exchange Agentic Operations" loading="lazy">
+</a>
+<a href="cert1.jpg" target="_blank" rel="noopener">
+<img src="cert1.jpg" alt="Certificate of Attendance: From Manual to Intelligent" loading="lazy">
+</a>
+<a href="cert5.jpg" target="_blank" rel="noopener">
+<img src="cert5.jpg" alt="Certificate of Attendance: A Blueprint for Operationalizing Risk Management" loading="lazy">
+</a>
+<a href="cert4.jpg" target="_blank" rel="noopener">
+<img src="cert4.jpg" alt="Certificate of Participation: Next Gen Arduino" loading="lazy">
+</a>
+<a href="cert2.jpg" target="_blank" rel="noopener">
+<img src="cert2.jpg" alt="Certificate of Participation: Code, Create, Deploy" loading="lazy">
+</a>
+</div>
+</div></section>
+
+<section id="github"><div class="wrap">
+<p class="eyebrow">09 · GitHub</p>
+<h2>GitHub and LinkedIn</h2>
+<p class="sub">My source code and professional profile.</p>
+<div class="ph">
+<small>Links</small>
+<h3>Profiles</h3>
+<p>GitHub and LinkedIn profiles will be linked here once public repositories and the professional page are ready. All correspondence uses the same professional email: <a href="mailto:johnpaulsonio48@gmail.com">johnpaulsonio48@gmail.com</a>.</p>
+<a href="https://github.com/johnpaulsonio"> My Github page</a> <br>
+<a href="https://www.linkedin.com/in/john-paul-sonio-801a09447/"> My LinkedIn page</a>
+</div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+<p class="eyebrow">10 · Contact</p>
+<h2>Let’s talk</h2>
+<p class="sub">Send a message and it opens in your email app.</p>
+<div class="contact-grid">
+<p>I’m open to junior developer roles and internships. The quickest way to reach me is by email at <a href="mailto:johnpaulsonio48@gmail.com">johnpaulsonio48@gmail.com</a>.</p>
+<div class="form" id="form">
+<label>Name<input id="n" autocomplete="name"><span class="err" id="en"></span></label>
+<label>Message<textarea id="m" rows="5" maxlength="1000"></textarea><span class="err" id="em"></span></label>
+<button class="btn main" id="send" type="button">Send email</button>
+<p class="status" id="st" role="status"></p>
+</div>
+</div>
+</div></section>
+
+<section id="reflection"><div class="wrap">
+<p class="eyebrow">11 · Reflection</p>
+<h2>Reflection</h2>
+<p class="sub">Looking back on the BSIT program so far.</p>
+<div class="ph">
+<small>Reflection</small>
+<h3>What I’ve learned and where I’m going</h3>
+<p>Before BSIT I knew computers mostly as a user—browsing, school work and a little curiosity about how websites were made. I had no clear picture of software development, databases or the discipline needed to turn an idea into a working system.</p>
+<p>The most important things I have learned are how to break a problem into smaller steps, how to read and write code that other people can understand, and how data can reveal patterns that help real decisions. Courses in programming, databases and systems analysis forced me to move from “it works on my machine” to “it works for the user and can be maintained.”</p>
+<p>The project that taught me the most is the Food Delivery Analysis workbook. Cleaning the data, writing formulas, calculating correlations and then turning numbers into concrete recommendations showed me that technical skill only matters when it produces clear, usable insight. Presenting the findings also improved my ability to explain technical work to non-technical listeners.</p>
+<p>The hardest technical difficulty so far has been debugging—especially when a page looks fine but behaves differently on another device or when a query returns unexpected rows. Learning to use browser DevTools, EXPLAIN plans and careful logging has made me slower to assume and faster to verify.</p>
+<p>My IT skills have grown from basic HTML pages to responsive layouts, simple JavaScript interactivity, Python scripts, SQL queries and structured Excel analysis. Soft skills—communication, responsibility and working with others—have improved through group projects and part-time work.</p>
+<p>I still need to improve modern frontend frameworks, API design, testing habits and deployment workflows. I also want stronger habits around version control and documentation.</p>
+<p>I want to become a reliable junior web developer who can take a feature from requirements to a working, accessible interface, communicate clearly with teammates, and keep learning. Over time I hope to grow into a full-stack role where I can mentor others and help deliver software that people actually use.</p>
+<p>I am ready to begin a career in IT because I have practiced the fundamentals, completed projects that demonstrate those skills, and developed the curiosity and persistence needed to keep improving. I know I still have a lot to learn, and I am prepared to learn it on the job.</p>
+</div>
+</div></section>
+</main>
+
+<footer><div class="wrap">© 2026 John Paul Sonio · Las Piñas City</div></footer>
+
+<script>
+(function(){
+var root=document.documentElement;
+function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
+var t=store("theme");if(t)root.setAttribute("data-theme",t);
+document.getElementById("theme").onclick=function(){
+  var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&matchMedia("(prefers-color-scheme:dark)").matches);
+  var n=dark?"light":"dark";
+  root.setAttribute("data-theme",n);
+  store("theme",n);
+};
+var roles=["web apps","databases","useful systems"],ri=0,r=document.getElementById("role");
+setInterval(function(){ri=(ri+1)%roles.length;r.textContent=roles[ri]},2600);
+var c=document.getElementById("card"),flip=0;
+function toggle(){flip=flip?0:180;c.style.setProperty("--flip",flip+"deg");c.setAttribute("aria-pressed",flip?"true":"false")}
+c.onclick=toggle;
+c.onkeydown=function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();toggle()}};
+c.onmousemove=function(e){
+  var b=c.getBoundingClientRect();
+  c.style.setProperty("--ry",((e.clientX-b.left)/b.width-.5)*14+"deg");
+  c.style.setProperty("--rx",-((e.clientY-b.top)/b.height-.5)*14+"deg");
+};
+c.onmouseleave=function(){c.style.setProperty("--rx","0deg");c.style.setProperty("--ry","0deg")};
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.style.width=e.target.dataset.level+"%";io.unobserve(e.target)}})});
+document.querySelectorAll(".fill").forEach(function(f){io.observe(f)});
+document.getElementById("send").onclick=function(){
+  var n=document.getElementById("n").value.trim(),m=document.getElementById("m").value.trim();
+  document.getElementById("en").textContent=n?"":"Please enter your name.";
+  document.getElementById("em").textContent=m?"":"Please enter a message.";
+  if(!n||!m)return;
+  location.href="mailto:johnpaulsonio48@gmail.com?subject="+encodeURIComponent("Portfolio message from "+n)+"&body="+encodeURIComponent(m);
+  document.getElementById("st").textContent="Opening your email app…";
+};
+document.getElementById("pr").onclick=function(){
+  document.body.classList.add("pr");
+  try{window.print()}catch(e){}
+  setTimeout(function(){document.body.classList.remove("pr")},500);
+};
+})();
+</script>
+</body>
+</html>
